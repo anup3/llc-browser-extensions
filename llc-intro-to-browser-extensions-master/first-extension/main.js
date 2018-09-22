@@ -24,9 +24,16 @@ var allImages = document.getElementsByTagName('img');
 console.log(allImages)
 
 for (var i = 0; i < allImages.length; i++) {
-	var imageHeight = allImages[i].clientHeight;
-	var imageWidth = allImages[i].clientWidth;
-	allImages[i].setAttribute('src', 'http://placebear.com/' + imageWidth + '/' + imageHeight)
+	//var imageHeight = allImages[i].clientHeight;
+	//var imageWidth = allImages[i].clientWidth;
+	//allImages[i].setAttribute('src', 'http://placebear.com/' + imageWidth + '/' + imageHeight)
+    allImages[i].addEventListener('click', function() {
+        console.log(this);
+        var imageHeight = this.clientHeight;
+    	var imageWidth = this.clientWidth;
+        var imgLink = 'http://placebear.com/' + imageWidth + '/' + imageHeight;
+        this.setAttribute('src', imgLink);
+    })
 }
 
-document.body.style = "transition: 2s; transform: rotate(1080deg);";
+//document.body.style = "transition: 2s; transform: rotate(1080deg);";
